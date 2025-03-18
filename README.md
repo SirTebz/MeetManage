@@ -14,22 +14,6 @@ MeetManage is a web-based application built using ASP.NET MVC to help users mana
 
 A new feature has been added to manage event invitations. Users can now receive, track, and respond to invitations.
 
-### Invitations Table Structure
-
-| Column | Description |
-|--------|-------------|
-| Id | Primary Key (Unique Identifier) |
-| DateReceived | Date/Time the invitation was received |
-| From | Sender of the invitation |
-| Item | Short description of the invitation |
-| EventDate | Date of the event |
-| EventPlace | Location of the event |
-| EventTime | Time of the event |
-| Comments | Additional notes or instructions |
-| Decision | Invitation status (Accepted, Declined) |
-| DaysBeforeApology | Number of days before a cancellation or apology is needed |
-| Action | Required action (Confirm attendance, Respond with apology) |
-
 ## Installation Guide
 
 ### Prerequisites
@@ -70,12 +54,4 @@ A new feature has been added to manage event invitations. Users can now receive,
 ## Contributing
 
 Contributions are welcome! Feel free to fork the repository and submit pull requests.
-
-## License
-
-This project is licensed under the MIT License.
-
-## Contact
-
-For any queries, reach out to [Your Contact Email or GitHub Issues].
 
