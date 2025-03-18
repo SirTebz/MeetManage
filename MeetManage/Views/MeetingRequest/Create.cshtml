@@ -1,0 +1,116 @@
+﻿@model MeetManage.Models.MeetingRequest
+@{
+    ViewData["Title"] = "Create";
+}
+<br />
+
+<h2 class="text-info">Create a Meeting Request</h2>
+<form asp-action="Create" method="post">
+    <div class="p-4 rounded border">
+        <div asp-validation-summary="ModelOnly" class="text-danger">
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="From"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="From" class="form-control" placeholder="Person initiating the request" />
+            </div>
+            <span asp-validation-for="From" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Item"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="Item" class="form-control" placeholder="Subject of the request" />
+            </div>
+            <span asp-validation-for="Item" class="text-danger"></span>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="UserId"></label>
+            </div>
+            <div class="col-5">
+                <select asp-for="UserId" class="form-control" asp-items="ViewBag.UserId">
+                    <option value="">-- Select a user you want to send request to --</option>
+                </select>
+            </div>
+            <span asp-validation-for="UserId" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="MeetingDate"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="MeetingDate" class="date" />
+            </div>
+            <span asp-validation-for="MeetingDate" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="MeetingPlace"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="MeetingPlace" class="form-control" />
+            </div>
+            <span asp-validation-for="MeetingPlace" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="MeetingTime"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="MeetingTime" class="form-control" />
+            </div>
+            <span asp-validation-for="MeetingTime" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Comments"></label>
+            </div>
+            <div class="col-5">
+                <textarea asp-for="Comments" class="form-control" rows="5"></textarea>
+            </div>
+            <span asp-validation-for="Comments" class="text-danger"></span>
+        </div>
+@* 
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="DaysSinceReceived"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="DaysSinceReceived" class="form-control"  />
+            </div>
+            <span asp-validation-for="DaysSinceReceived" class="text-danger"></span>
+        </div> *@
+       @*  <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Decision"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="Decision" class="form-control"  />
+            </div>
+            <span asp-validation-for="Decision" class="text-danger"></span>
+        </div> *@
+       @*  <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Action"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="Action" class="form-control"  />
+            </div>
+            <span asp-validation-for="Action" class="text-danger"></span>
+        </div> *@
+       
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary" value="Save" />
+            <a asp-action="Index" class="btn btn-success">Back to List</a>
+        </div>
+    </div>
+</form>
+
+@*@section script{ 
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}*@

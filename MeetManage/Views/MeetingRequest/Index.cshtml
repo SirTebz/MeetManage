@@ -1,0 +1,81 @@
+﻿@using MeetManage.Models
+@model IEnumerable<MeetingRequest>
+@{
+    ViewData["Tittle"] = "Index";
+}
+<br />
+<br />
+<div class="row">
+    <div class="col-6">
+        <h2 class="text-info">Meetings</h2>
+    </div>
+    <div class="col-6 text-right">
+        <a asp-action="Create" class="btn btn-info">New Meeting</a>
+    </div>
+</div>
+<br />
+<div>
+    <table class="table table-striped border">
+        <tr class=" table-active">
+            <th>
+                @Html.DisplayNameFor(c => c.DateReceived)
+            </th>
+            <th>
+                @Html.DisplayNameFor(c => c.From)
+            </th>
+            <th>
+                @Html.DisplayNameFor(c => c.Item)
+            </th>
+            <th>
+                Assigned User
+            </th>
+            <th>
+                @Html.DisplayNameFor(c => c.MeetingDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(c => c.MeetingPlace)
+            </th>
+            <th>
+                @Html.DisplayNameFor(c => c.MeetingTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(c => c.Comments)
+            </th>
+            <th>
+                @Html.DisplayNameFor(c => c.DaysSinceReceived)
+            </th>
+            <th>
+                @Html.DisplayNameFor(c => c.Decision)
+            </th>
+            <th>
+                @Html.DisplayNameFor(c => c.Action)
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.DateReceived</td>
+                <td>@item.From</td>
+                <td>@item.Item</td>
+                <td>@item.UserId</td>
+                <td>@item.MeetingDate</td>
+                <td>@item.MeetingPlace</td>
+                <td>@item.MeetingTime</td>
+                <td>@item.Comments</td>
+                <td>@item.DaysSinceReceived</td>
+                <td>@item.Decision</td>
+                <td>@item.Action</td>
+                <td>
+
+                    <partial name="_MeetingRequestPartial" model="@item.Id" />
+                </td>
+            </tr>
+        }
+    </table>
+
+
+
+</div>
