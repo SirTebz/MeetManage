@@ -40,6 +40,18 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+//app.UseEndpoints(endpoints =>
+//{
+//    endpoints.MapRazorPages();
+
+//    // Redirect root URL to your Razor Page in an Area
+//    endpoints.MapGet("/", async context =>
+//    {
+//        context.Response.Redirect("Identity/Account/Login");
+//    });
+//});
+
 app.MapRazorPages();
 
 app.Run();
