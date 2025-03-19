@@ -116,6 +116,8 @@ namespace MeetManage.Areas.Identity.Pages.Account
                 {
                     _logger.LogInformation("User logged in.");
                     return LocalRedirect(returnUrl);
+                    //return RedirectToAction("Index", "~/Home"); // Redirect to HomeController
+                    //return Redirect("/Home/Index"); // Redirect to Index.cshtml
                 }
                 if (result.RequiresTwoFactor)
                 {
