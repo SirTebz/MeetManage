@@ -1,0 +1,31 @@
+﻿@model MeetManage.Hubs.DashboardViewModel
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<h2>Dashboard</h2>
+<p>Welcome back, @User.Identity.Name</p>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <h4>Upcoming Meetings</h4>
+            <p>@Model.UpcomingMeetings.Count</p>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <h4>Pending Invitations</h4>
+            <p>@Model.PendingInvitations.Count</p>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <h4>Ongoing Meetings</h4>
+            <p>@Model.OngoingMeetings.Count</p>
+        </div>
+    </div>
+</div>

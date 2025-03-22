@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Event>
+
+@{
+    ViewData["Title"] = "Events";
+}
+
+<h2>Events</h2>
+<a class="btn btn-primary" asp-action="Create">Create New Event</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Location</th>
+            <th>Organizer</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var eventItem in Model)
+        {
+            <tr>
+                <td>@eventItem.Title</td>
+                <td>@eventItem.StartTime</td>
+                <td>@eventItem.EndTime</td>
+                <td>@eventItem.Location</td>
+                <td>@eventItem.Organizer</td>
+                <td>
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@eventItem.Id">Edit</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@eventItem.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

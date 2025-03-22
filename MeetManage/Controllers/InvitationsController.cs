@@ -22,6 +22,8 @@ namespace MeetManage.Controllers
         // GET: Invitations
         public async Task<IActionResult> Index()
         {
+            //var invitations = _context.Invitations.ToList();
+            //return View(invitations);
             return View(await _context.Invitations.ToListAsync());
         }
 
@@ -63,6 +65,20 @@ namespace MeetManage.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(invitation);
+        }
+
+        public ActionResult Send(int meetingId)
+        {
+            var invitation = new Invitation
+            {
+                Id = meetingId,
+                From = User.Identity.Name,
+                Decision = "Pending"
+            };
+
+            _context.Invitations.Add(invitation);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         // GET: Invitations/Edit/5

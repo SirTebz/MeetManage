@@ -14,4 +14,5 @@ public class ApplicationDbContext : IdentityDbContext
     public DbSet<MeetingRequest> meetingRequests { get; set; }
     public DbSet<Users> users { get; set; }
     public DbSet<Invitation> Invitations { get; set; }
+    public DbSet<Event> Events { get; set; }
 }
